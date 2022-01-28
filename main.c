@@ -11,5 +11,5 @@ int	main(int ac, char **av)
 		errors("Error\nWrong number of args!\n");
 	init_all(&all, &text, &colors, &resol);
 	check_input(av[1], &all);
-	return (0);
+	exit(0);
 }

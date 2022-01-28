@@ -5,8 +5,10 @@
 #include "libft/libft.h"
 #include "gnl/get_next_line.h"
 #include <math.h>
+#include <limits.h>
 
 # define SCALE 16 //conditionally our square size in the map
+# define BUF_SIZE 32
 
 //struct for a window
 typedef struct s_win
@@ -42,11 +44,13 @@ typedef struct s_resol
 	int		resol_y;
 }			t_resol;
 
-//floor and ceiling colors structure
+//floor and ceiling colors structure, chars needed to jmaryett
 typedef struct s_colors
 {
 	char	*floor_color;
 	char	*ceiling_color;
+	char	**floor_correct;
+	char	**ceiling_correct;
 	int		floor_r;
 	int		floor_g;
 	int		floor_b;
@@ -78,6 +82,9 @@ typedef struct s_all
 void	errors(char *s);
 int		ft_strcmp(const char *s1, const char *s2);
 int		check_only_spaces(char *s);
+int	ft_atoi_m(const char *str);
+int	skip_space(char *str, unsigned char sym);
+size_t	ft_strlen_m(const char *str, int c);
 
 //parse funcs
 void	check_input(char *av, t_all *all);
@@ -89,5 +96,8 @@ void	valid_text(char *s, t_all *all, int i);
 void	process_map(t_list *map_head, int size, t_all *all);
 int		check_if_all_elems_filled(t_all *all);
 void	check_text_struct(t_all *all);
+void	check_ceiling_struct(char *colors, t_all *all);
+void	check_floor_struct(char *colors, t_all *all);
+void	is_valid_symbols(char **rgb);
 
 #endif

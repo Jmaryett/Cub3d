@@ -10,7 +10,9 @@ SOURCE = main.c errors.c check_input.c \
 		./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 		./parse_input/check_list_content.c ./parse_input/init_all.c \
 		./parse_input/utils.c ./parse_input/valid_text_elem.c ./parse_input/check_if_all_elems_filled.c \
-		./parse_input/map/check_text_struct.c ./parse_input/map/process_map.c 
+		./parse_input/map/check_text_struct.c ./parse_input/map/process_map.c \
+		./parse_input/map/check_ceiling_struct.c ./parse_input/map/check_floor_struct.c \
+		./parse_input/map/utils_for_color.c 
 
 OBJ = $(SOURCE:.c=.o)
 
