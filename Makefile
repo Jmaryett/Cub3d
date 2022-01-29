@@ -1,5 +1,7 @@
 NAME = cub3d
 
+NAME_LINUX = linuxCub3d
+
 LIBA_C = ./libft/*.c
 
 LIBA_H = ./libft/libft.h
@@ -10,9 +12,13 @@ SOURCE = main.c errors.c check_input.c \
 		./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 		./parse_input/check_list_content.c ./parse_input/init_all.c \
 		./parse_input/utils.c ./parse_input/valid_text_elem.c ./parse_input/check_if_all_elems_filled.c \
-		./parse_input/map/check_text_struct.c ./parse_input/map/process_map.c \
-		./parse_input/map/check_ceiling_struct.c ./parse_input/map/check_floor_struct.c \
-		./parse_input/map/utils_for_color.c 
+		./parse_input/process_map.c \
+		./parse_input/floor_ceiling_text_parse/check_text_struct.c \
+		./parse_input/floor_ceiling_text_parse/check_ceiling_struct.c \
+		./parse_input/floor_ceiling_text_parse/check_floor_struct.c \
+		./parse_input/floor_ceiling_text_parse/utils_for_color.c \
+		./parse_input/floor_ceiling_text_parse/check_ceiling_format.c \
+		./parse_input/floor_ceiling_text_parse/check_floor_format.c
 
 OBJ = $(SOURCE:.c=.o)
 
@@ -26,6 +32,7 @@ HEADER = cub.h \
 
 MLX = libmlx.dylib
 
+MLX_LINUX = libmlx_Linux.a
 
 .PHONY: all clean fclean re bonus norm libft minilibx
 
@@ -34,12 +41,20 @@ MLX = libmlx.dylib
 
 all: $(NAME)
 
+
 ${MLX}:
 		cd ./mlx; \
 		make; \
 		mv ${MLX} ../; \
 		make clean; \
 		cd ../
+
+${MLX_LINUX}:
+				cd ./mlx_linux; \
+				make; \
+				mv ${MLX_LINUX} ../; \
+				make clean; \
+				cd ../
 
 $(LIBA): $(LIBA_C) $(LIBA_H)
 			cd ./libft; \
@@ -50,6 +65,11 @@ $(LIBA): $(LIBA_C) $(LIBA_H)
 
 ${NAME}: ${LIBA} ${MLX} ${HEADER} ${OBJ}
 		${CC} ${CFLAGS} -framework  OpenGL -framework AppKit -o ${NAME} ${OBJ} ${LIBA} ${MLX}
+
+$(NAME_LINUX): ${LIBA} ${MLX_LINUX} ${HEADER} ${OBJ}
+			${CC} ${CFLAGS} -Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME_LINUX) ${OBJ} ${LIBA} ${MLX_LINUX}
+
+linux: $(NAME_LINUX)
 
 clean:
 		${RM} ${OBJ}

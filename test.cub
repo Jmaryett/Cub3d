@@ -1,15 +1,19 @@
-  NO ./path_to_the_north_texture
-  
-  
-SO jkjjkj jkjk
 
-              WE    ./path_to_the_west_texture
+
+
+NO  ./path_to _the_north_texture
+
+
+
+SO jkjjkj jkjk            
+
+WE ./path_to_the_west_texture
 
 EA ./path_to_the_east_texture    
 
-F 2, 20
+F  2, 90,                    18
 
-C 225,30,0
+C    225,30,0   
 
 
 111000001110000000000001
@@ -24,6 +28,3 @@ C 225,30,0
 11000001110101011111011110N0111
 11110111 1110101     101111010001
 11111111 1111111 111111111111
-
-
-F = sssks

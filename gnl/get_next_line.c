@@ -67,10 +67,10 @@ int	get_next_line(int fd, char **line)
 {
 	char		*buf;
 	static char	*ostatok;
-	int			i;
+	//int			i;
 	size_t		n_read;
 
-	i = 0;
+	//i = 0;
 	if (fd < 0 || !line || BUFFER_SIZE < 1)
 		return (-1);
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));

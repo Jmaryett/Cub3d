@@ -54,9 +54,9 @@ static void	process_elements(char *s, t_all *all)
 
 static int check_str_content(char *content, t_all *all, t_list *tmp)
 {
-	int	i;
+	//int	i;
 
-	i = -1;
+	//i = -1;
 	if (!check_only_spaces(content)) //if str contains only spaces we skip it
 		return (1);
 	else if (is_map(tmp)) //if we find map then we stop processing in that func, process map and return filled structs and map
