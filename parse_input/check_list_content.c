@@ -33,7 +33,7 @@ static void	process_elements(char *s, t_all *all)
 	{
 		while (s[i] == ' ')
 			i++;
-		if (s[i] == 'C' || s[i] == 'F' || s[i] == 'R' || s[i] == 'N'
+		if (s[i] == 'C' || s[i] == 'F' || /* s[i] == 'R' || */ s[i] == 'N'
 			|| s[i] == 'W' || s[i] == 'E' || s[i] == 'S')
 		{
 			count = 1;

@@ -3,12 +3,12 @@
 static void	check_valid_after_parse(t_all *all, char **map)
 {
 	check_text_struct(all);
-	printf("No sega\n");
+	//printf("No sega\n");
 	check_ceiling_struct(all->ceiling.ceiling_color, all);
 	check_floor_struct(all->floor.floor_color, all);
-	//printf("in ceiling r - %d, g - %d, b - %d\n", all->colors->ceiling_r, all->colors->ceiling_g, all->colors->ceiling_b);
-	//printf("in floor r - %d, g - %d, b - %d\n", all->colors->floor_r, all->colors->floor_g, all->colors->floor_b);
-	(void)map;
+	//printf("in ceiling r - %d g - %d b - %d\n", all->ceiling.ceiling_r, all->ceiling.ceiling_g, all->ceiling.ceiling_b);
+	//printf("in floor r - %d g - %d b - %d\n", all->floor.floor_r, all->floor.floor_g, all->floor.floor_b);
+	check_if_map_is_valid(map, &all->plr);
 	//check_valid_map();
 }
 

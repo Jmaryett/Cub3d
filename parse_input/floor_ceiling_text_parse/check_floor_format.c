@@ -35,7 +35,7 @@ void check_floor_format(char *str, t_floor *floor)
 		flag = fill_rgb(str, flag, floor, i);
 		i = move_i(str, i);
 		i = skip_space_in_s(str, i);
-		if (str[i] == ',' && flag != 3)
+		if (str[i] == ',' && flag != 3 && str[i + 1] != '\0')
 		{
 			i++;
 			continue;

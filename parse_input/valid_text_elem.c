@@ -14,12 +14,12 @@ static void	valid_elems(char *s, t_all *all, int i)
 			errors("Error\nToo many floor colors!\n");
 		all->floor.floor_color = s;
 	}
-	else if (s[i] == 'R')
-	{
-		if (all->resol.resolution)
-			errors("Error\nToo many resolution values!\n");
-		all->resol.resolution = s;
-	}
+	// else if (s[i] == 'R')
+	// {
+	// 	if (all->resol.resolution)
+	// 		errors("Error\nToo many resolution values!\n");
+	// 	all->resol.resolution = s;
+	// }
 	else
 		errors("Error\nNot enough or wrong elements!\n");
 }

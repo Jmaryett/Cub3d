@@ -9,6 +9,8 @@
 
 # define SCALE 16 //conditionally our square size in the map
 # define BUF_SIZE 32
+# define RES_X 1280
+# define RES_Y 720
 
 //struct for a window
 typedef struct s_win
@@ -107,5 +109,7 @@ void	check_ceiling_format(char *str, t_ceiling *ceiling);
 void	check_floor_format(char *str, t_floor *floor);
 int		move_i(char *s, int i);
 int		skip_space_in_s(char *s, int i);
+
+void	check_if_map_is_valid(char **map, t_plr *player);
 
 #endif
