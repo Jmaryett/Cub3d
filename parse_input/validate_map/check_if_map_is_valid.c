@@ -7,7 +7,7 @@ static void	add_check_map_char_empty_lines(char **map, int i, int j)
 	else if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'N'
 		&& map[i][j] != 'S' && map[i][j] != 'W' && map[i][j] != 'E'
 		&& map[i][j] != ' ')
-		errors("Error\nWrong symbols in map!\n");
+		errors("Error\nWrong symbols in the map!\n");
 }
 
 void	check_map_char_empty_lines(char **map, int i, int j, t_plr *player)
