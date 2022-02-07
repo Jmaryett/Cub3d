@@ -12,14 +12,15 @@ SOURCE = main.c errors.c check_input.c \
 		./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 		./parse_input/check_list_content.c ./parse_input/init_all.c \
 		./parse_input/utils.c ./parse_input/valid_text_elem.c ./parse_input/check_if_all_elems_filled.c \
-		./parse_input/process_map.c \
+		./parse_input/create_map.c \
 		./parse_input/floor_ceiling_text_parse/check_text_struct.c \
 		./parse_input/floor_ceiling_text_parse/check_ceiling_struct.c \
 		./parse_input/floor_ceiling_text_parse/check_floor_struct.c \
 		./parse_input/floor_ceiling_text_parse/utils_for_color.c \
 		./parse_input/floor_ceiling_text_parse/check_ceiling_format.c \
 		./parse_input/floor_ceiling_text_parse/check_floor_format.c \
-		./parse_input/validate_map/check_if_map_is_valid.c
+		./parse_input/validate_map/check_if_map_is_valid.c ./parse_input/validate_map/check_walls.c \
+		./parse_input/validate_map/check_how_map_filled.c 
 
 OBJ = $(SOURCE:.c=.o)
 

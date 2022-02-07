@@ -5,6 +5,8 @@ int	check_only_spaces(char *s)
 	int	i;
 	int	not_empty_s;
 
+	if (!s)
+		return (0);
 	not_empty_s = 0;
 	i = -1;
 	while (s[++i])

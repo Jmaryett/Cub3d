@@ -63,7 +63,7 @@ static int check_str_content(char *content, t_all *all, t_list *tmp)
 	{
 		if (!check_if_all_elems_filled(all))
 			errors("Error\nNot enough elements!\n");
-		process_map(tmp, ft_lstsize(tmp), all); //we fill map
+		create_map(tmp, ft_lstsize(tmp), all); //we fill map
 		return (0);
 	}
 	process_elements(content, all);

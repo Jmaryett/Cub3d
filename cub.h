@@ -99,7 +99,7 @@ void	init_all(t_all *all);
 void	valid_text(char *s, t_all *all, int i);
 
 //validating input for each element including map
-void	process_map(t_list *map_head, int size, t_all *all);
+void	create_map(t_list *map_head, int size, t_all *all);
 int		check_if_all_elems_filled(t_all *all);
 
 void	check_text_struct(t_all *all);
@@ -111,5 +111,7 @@ int		move_i(char *s, int i);
 int		skip_space_in_s(char *s, int i);
 
 void	check_if_map_is_valid(char **map, t_plr *player);
+void	check_walls(char **map, int i, int j);
+void	check_how_map_filled(char **map, int i, int j);
 
 #endif
