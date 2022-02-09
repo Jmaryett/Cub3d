@@ -69,7 +69,7 @@ ${NAME}: ${LIBA} ${MLX} ${HEADER} ${OBJ}
 		${CC} ${CFLAGS} -framework  OpenGL -framework AppKit -o ${NAME} ${OBJ} ${LIBA} ${MLX}
 
 $(NAME_LINUX): ${LIBA} ${MLX_LINUX} ${HEADER} ${OBJ}
-			${CC} ${CFLAGS} -Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME_LINUX) ${OBJ} ${LIBA} ${MLX_LINUX}
+			${CC} ${CFLAGS} -Lmlx_linux -L/usr/lib -Imlx_linux -lm -o $(NAME_LINUX) ${OBJ} ${LIBA} ${MLX_LINUX}
 
 liba: $(LIBA)
 

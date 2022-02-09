@@ -2,3 +2,4 @@
 parse_input/map/*.o
 parse_input/*.o
 .DS-Store
+libft.a

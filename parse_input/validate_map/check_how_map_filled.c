@@ -6,9 +6,12 @@ static int check_spaces_in_map(char **map, int i, int j)
 		errors("Error\nWrong map format check_spaces_in_map_1\n"); // if before space was not 1
 	while (map[i][j] == ' ')
 	{
-		if (map[i - 1])
-			if (map[i - 1][j] != ' ' && map[i - 1][j] != '1') // if above isn't 1 or space
+		if (i != 0)//map[i - 1]
+			if (map[i - 1][j] != ' ' && map[i - 1][j] != '1' && (map[i - 1][j - 1] == '0' || map[i - 1][j + 1] == '0')) // if above isn't 1 or space
 				errors("Error\nWrong map format check_spaces_in_map_2\n");
+		if (map[i + 1] && map[i + 1][0] != '\0')
+			if (map[i + 1][j - 1] == '0' || map[i + 1][j + 1] == '0')
+				errors("Error\nWrong map format check_spaces_in_map_3\n");
 		j++;
 	}
 	if (map[i][j] != '1')
@@ -22,8 +25,6 @@ static int check_zero_in_map(char **map, int i, int j)
 		errors("Error\nWrong map format check_zero_in_map_1\n"); // if before zero was not 1
 	while (map[i][j] == '0')
 	{
-		// if (!map[i - 1])
-		// 	errors("Error\nMap can't start with '0' check_zero_in_map_1\n"); //maybe i don't need it cause i have check_walls
 		if (map[i - 1][j] != '1' && map[i - 1][j] != '0') // if above isn't 1 or 0
 			errors("Error\nWrong map format check_zero_in_map_2\n");
 		else if (!map[i + 1] || map[i + 1][0] == '\0')

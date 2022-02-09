@@ -30,7 +30,7 @@ void	check_map_char_empty_lines(char **map, int i, int j, t_plr *player)
 				player->x = j;
 				player->y = i;
 				player->dir = map[i][j];
-				map[i][j] == '0';
+				map[i][j] = '0';
 			}
 			j++;
 		}
@@ -47,7 +47,7 @@ void	check_if_map_is_valid(char **map, t_plr *player)
 	j = 0;
 	if (!map || !*map)
 		return ;
-	printf("No sega\n");
+	//printf("No sega\n");
 	check_map_char_empty_lines(map, i, j, player);
 	check_walls(map, i, j);
 	check_how_map_filled(map, i, j);
