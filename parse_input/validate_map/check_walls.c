@@ -15,6 +15,7 @@ void	check_walls(char **map, int i, int j)
 		j++;
 	}
 	j = 0;
+	printf("map[len] = %s, map[len - 1] = %s\n", map[len], map[len-1]);
 	if (map[len - 1][0] == '\0')
 		return ;
 	else if (!check_only_spaces(map[len - 1]))

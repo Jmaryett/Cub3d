@@ -33,7 +33,7 @@ typedef struct s_plr
 {
 	float	x;
 	float	y;
-	float	dir;
+	char	dir;
 	float	start;
 	float	end;
 }			t_plr;

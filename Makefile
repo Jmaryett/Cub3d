@@ -71,6 +71,8 @@ ${NAME}: ${LIBA} ${MLX} ${HEADER} ${OBJ}
 $(NAME_LINUX): ${LIBA} ${MLX_LINUX} ${HEADER} ${OBJ}
 			${CC} ${CFLAGS} -Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME_LINUX) ${OBJ} ${LIBA} ${MLX_LINUX}
 
+liba: $(LIBA)
+
 linux: $(NAME_LINUX)
 
 clean:

@@ -29,6 +29,8 @@ void	check_map_char_empty_lines(char **map, int i, int j, t_plr *player)
 				pos_flag = 1;
 				player->x = j;
 				player->y = i;
+				player->dir = map[i][j];
+				map[i][j] == '0';
 			}
 			j++;
 		}
