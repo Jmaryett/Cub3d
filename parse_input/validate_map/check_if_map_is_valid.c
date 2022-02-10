@@ -36,6 +36,8 @@ void	check_map_char_empty_lines(char **map, int i, int j, t_plr *player)
 		}
 		i++;
 	}
+	if (pos_flag == 0)
+		errors("Error\nNo player in the map!\n");
 }
 
 void	check_if_map_is_valid(char **map, t_plr *player)

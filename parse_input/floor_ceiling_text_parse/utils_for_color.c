@@ -34,6 +34,19 @@ int	skip_space(char *str, unsigned char sym)
 	return (i);
 }
 
+int	skip_whitespace(char *str)
+{
+	int	i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	while(str[i] && (str[i] == '\a' || str[i] == '\t' || str[i] == '\b' || str[i] == '\n' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == '\e' || str[i] == ' '))
+		i++;
+	return (i);
+}
+
 int	ft_atoi_m(const char *str)
 {
 	int					negative;

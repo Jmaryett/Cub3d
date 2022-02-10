@@ -8,7 +8,6 @@ static void	check_valid_after_parse(t_all *all, char **map)
 	check_floor_struct(all->floor.floor_color, all);
 	//printf("in ceiling r - %d g - %d b - %d\n", all->ceiling.ceiling_r, all->ceiling.ceiling_g, all->ceiling.ceiling_b);
 	//printf("in floor r - %d g - %d b - %d\n", all->floor.floor_r, all->floor.floor_g, all->floor.floor_b);
-	//printf("No sega\n");
 	check_if_map_is_valid(map, &all->plr);
 	//check_valid_map();
 }
@@ -30,6 +29,6 @@ void	create_map(t_list *map_head, int size, t_all *all)
 		tmp = tmp->next;
 	}
 	//for (int i = 0; map[i]; i++)
-		//printf("after checking %s\n", map[i]);
+	//	printf("after checking %s\n", map[i]);
 	check_valid_after_parse(all, map);
 }

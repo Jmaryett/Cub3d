@@ -8,7 +8,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "${workspaceFolder}/linuxCub3d",
+			"program": "${workspaceFolder}/cub3D",
 			"args": ["test.cub"],
 			"cwd": "${workspaceFolder}"
 		}

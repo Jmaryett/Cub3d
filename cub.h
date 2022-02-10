@@ -91,6 +91,7 @@ int		check_only_spaces(char *s);
 int		ft_atoi_m(const char *str);
 int		skip_space(char *str, unsigned char sym);
 size_t	ft_strlen_m(const char *str, int c);
+int	skip_whitespace(char *str);
 
 //parse funcs
 void	check_input(char *av, t_all *all);

@@ -1,6 +1,6 @@
 NAME = cub3d
 
-NAME_LINUX = linuxCub3d
+NAME_LINUX = cub3D
 
 LIBA_C = ./libft/*.c
 
@@ -79,7 +79,7 @@ clean:
 		${RM} ${OBJ}
 
 fclean:	clean
-		${RM} ${NAME} a.out ${LIBA} ${MLX}
+		${RM} ${NAME} $(NAME_LINUX) a.out ${LIBA} ${MLX}
 
 norm:
 		norminette ${SOURCE} ${HEADER}

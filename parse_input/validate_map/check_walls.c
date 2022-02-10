@@ -15,15 +15,22 @@ void	check_walls(char **map, int i, int j)
 		j++;
 	}
 	j = 0;
-	printf("map[len] = %s, map[len - 1] = %s\n", map[len], map[len-1]);
-	if (map[len - 1][0] == '\0')
+	if (map[len - 1][0] == '\0') //if last str is empty i check if pre-last consists of 1 and ' '
+	{	
+		while(map[len - 2][j])
+		{
+			if (map[len - 2][j] != '1' && map[len - 2][j] != ' ')
+				errors("Error\nWrong symbols in the last line check_walls_2\n");
+			j++;
+		}
 		return ;
+	}
 	else if (!check_only_spaces(map[len - 1]))
-		errors("Error\nOnly spaces in the last line of the map check_walls_2\n");
+		errors("Error\nOnly spaces in the last line of the map check_walls_3\n");
 	while(map[len - 1][j])
 	{
 		if (map[len - 1][j] != '1' && map[len - 1][j] != ' ')
-			errors("Error\nWrong symbols in the last line check_walls_3\n");
+			errors("Error\nWrong symbols in the last line check_walls_4\n");
 		j++;
 	}
 }

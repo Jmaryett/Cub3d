@@ -6,7 +6,7 @@ static void	check_west_struct(char *path_west)
 	int	has_path;
 
 	has_path = 0;
-	i = skip_space(path_west, ' ');
+	i = skip_whitespace(path_west);
 	if (path_west[i] != 'W' && path_west[i + 1] != 'E')
 		errors("Error\nWrong identifier of the west texture!\n");
 	else
@@ -31,7 +31,7 @@ static void	check_east_struct(char *path_east)
 	int	has_path;
 
 	has_path = 0;
-	i = skip_space(path_east, ' ');
+	i = skip_whitespace(path_east);
 	if (path_east[i] != 'E' && path_east[i + 1] != 'A')
 		errors("Error\nWrong identifier of the east texture!\n");
 	else
@@ -56,7 +56,7 @@ static void	check_south_struct(char *path_south)
 	int	has_path;
 
 	has_path = 0;
-	i = skip_space(path_south, ' ');
+	i = skip_whitespace(path_south);
 	if (path_south[i] != 'S' && path_south[i + 1] != 'O')
 		errors("Error\nWrong identifier of the south texture!\n");
 	else
@@ -81,7 +81,7 @@ static void	check_north_struct(char *path_north)
 	int	has_path;
 
 	has_path = 0;
-	i = skip_space(path_north, ' ');
+	i = skip_whitespace(path_north);
 	if (path_north[i] != 'N' && path_north[i + 1] != 'O')
 		errors("Error\nWrong identifier of the north texture!\n");
 	else

@@ -7,7 +7,8 @@ static int check_spaces_in_map(char **map, int i, int j)
 	while (map[i][j] == ' ')
 	{
 		if (i != 0)//map[i - 1]
-			if (map[i - 1][j] != ' ' && map[i - 1][j] != '1' && (map[i - 1][j - 1] == '0' || map[i - 1][j + 1] == '0')) // if above isn't 1 or space
+			if (map[i - 1][j] != ' ' && map[i - 1][j] != '1' 
+				&& (map[i - 1][j - 1] == '0' || map[i - 1][j + 1] == '0')) // if above and aside isn't 1 or space
 				errors("Error\nWrong map format check_spaces_in_map_2\n");
 		if (map[i + 1] && map[i + 1][0] != '\0')
 			if (map[i + 1][j - 1] == '0' || map[i + 1][j + 1] == '0')
@@ -27,14 +28,17 @@ static int check_zero_in_map(char **map, int i, int j)
 	{
 		if (map[i - 1][j] != '1' && map[i - 1][j] != '0') // if above isn't 1 or 0
 			errors("Error\nWrong map format check_zero_in_map_2\n");
-		else if (!map[i + 1] || map[i + 1][0] == '\0')
-			errors("Error\nWrong map format check_zero_in_map_3\n");
-		if (map[i - 1][j] != '1' && map[i - 1][j] != '0') // if above isn't 1 or 0
-			errors("Error\nWrong map format check_zero_in_map_2\n");
+		else if (map[i + 1][j] != '1' && map[i + 1][j] != '0') // if below isn't 1 or 0
+			errors("Error\nWrong map format check_zero_in_map_4\n");
+		else if ((map[i + 1][j - 1] != '1' && map[i + 1][j - 1] != '0')
+			|| (map[i - 1][j - 1] != '1' && map[i - 1][j - 1] != '0')
+			|| (map[i + 1][j + 1] != '1' && map[i + 1][j + 1] != '0')
+			|| (map[i - 1][j + 1] != '1' && map[i - 1][j + 1] != '0')) //if on diagonal above and below zero isn't 1 or 0
+				errors("Error\nWrong map format check_zero_in_map_5\n");
 		j++;
 	}
 	if (map[i][j] != '1')
-		errors("Error\nWrong map format check_spaces_in_map_3\n"); // if after 0 isn't 1??
+		errors("Error\nWrong map format check_spaces_in_map_6\n"); // if after 0 isn't 1??
 	return (j);
 }
 

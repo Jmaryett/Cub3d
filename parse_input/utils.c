@@ -11,7 +11,7 @@ int	check_only_spaces(char *s)
 	i = -1;
 	while (s[++i])
 	{
-		if (s[i] != ' ')
+		if (s[i] != ' ' && s[i] != '\t')
 			not_empty_s = 1;
 	}
 	return (not_empty_s);

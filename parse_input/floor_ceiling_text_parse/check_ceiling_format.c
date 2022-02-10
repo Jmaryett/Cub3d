@@ -31,7 +31,7 @@ int	skip_space_in_s(char *s, int i)
 {
 	if (!s)
 		return (0);
-	while(s[i] && s[i] == ' ')
+	while(s[i] && (s[i] == ' ' || s[i] == '\t'))
 		i++;
 	return (i);
 }
@@ -51,7 +51,7 @@ void check_ceiling_format(char *str, t_ceiling *ceiling)
 		flag = fill_rgb(str, flag, ceiling, i);
 		i = move_i(str, i);
 		i = skip_space_in_s(str, i); //fix here 
-		if (str[i] == ',' && flag != 3)
+		if (str[i] == ',' && flag != 3 && str[i + 1] != '\0')
 		{
 			i++;
 			continue;
