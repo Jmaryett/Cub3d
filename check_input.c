@@ -70,5 +70,7 @@ void	check_input(char *av, t_all *all)
 	for(t_list *tmp = head; tmp; tmp = tmp->next)
 		printf("%s\n", (char *)tmp->content);
 	check_list_content(&head, all);
+	//check_xpm();
+	check_screen();
 	//make_map(&head, ft_lstsize(head));
 }

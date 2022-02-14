@@ -6,11 +6,13 @@
 #include "gnl/get_next_line.h"
 #include <math.h>
 #include <limits.h>
+#include "mlx/mlx.h"
 
 # define SCALE 16 //conditionally our square size in the map
 # define BUF_SIZE 32
 # define RES_X 1280
 # define RES_Y 720
+# define SPRITE_SZ 64
 
 //struct for a window
 typedef struct s_win
@@ -38,13 +40,25 @@ typedef struct s_plr
 	float	end;
 }			t_plr;
 
-//struct for resolution (not sure if needed)
-typedef struct s_resol
+//struct for xpm to img for each texture
+typedef struct s_img
 {
-	char	*resolution;
-	int		resol_x;
-	int		resol_y;
-}			t_resol;
+	void	*img;
+	void	*addr;
+	int		b_p_p;
+	int		line_len;
+	int		endian;
+}			t_img;
+
+//each struct will have it's info with xpm, addr, etc.
+typedef struct s_sprites
+{
+	t_img	*img_north;
+	t_img	*img_south;
+	t_img	*img_east;
+	t_img	*img_west;
+}				t_sprites;
+
 
 //floor and ceiling colors structure, chars needed to jmaryett
 typedef struct s_floor
@@ -80,7 +94,7 @@ typedef struct s_all
 	t_text_path	text;
 	t_floor		floor;
 	t_ceiling	ceiling;
-	t_resol		resol;
+	t_sprites	sprites; //for working with pixels and mlx
 	char		**map;
 }			t_all;
 
@@ -114,5 +128,8 @@ int		skip_space_in_s(char *s, int i);
 void	check_if_map_is_valid(char **map, t_plr *player);
 void	check_walls(char **map, int i, int j);
 void	check_how_map_filled(char **map, int i, int j);
+void	check_screen(void);
+
+void	init_sprites(t_sprites *sprites, t_all *all);
 
 #endif
