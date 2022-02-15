@@ -31,4 +31,5 @@ void	create_map(t_list *map_head, int size, t_all *all)
 	//for (int i = 0; map[i]; i++)
 	//	printf("after checking %s\n", map[i]);
 	check_valid_after_parse(all, map);
+	all->map = map;
 }

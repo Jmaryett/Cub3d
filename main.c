@@ -8,7 +8,7 @@ void	start_mlx(t_all *all)
 	//here is the game process should be
 	mlx_hook(all->win.win, 2, 1, 1L << 0, key_pressed, all);
 	mlx_hook(all->win.win, 2, 1, 1L << 1, key_released, all);
-	mlx_hook(all->win.win, 17, 1, 1L << 2, esc, all); //my funcs for pressing, releasing keys
+	mlx_hook(all->win.win, 17, 1, 1L << 2, esc, all); // funcs for pressing, releasing keys
 	mlx_loop(all->win.mlx);
 }
 
