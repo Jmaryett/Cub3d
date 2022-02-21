@@ -4,6 +4,8 @@ void	start_mlx(t_all *all)
 {
 	all->win.mlx = mlx_init();
 	init_sprites(&all->sprites, all);
+	//if we want a screen being dynamically allocated, then we don't need func below, Artem should
+	//find size of the textures when finding the ray or so
 	all->win.win = mlx_new_window(all->win.mlx, RES_X * SPRITE_SZ, RES_Y * SPRITE_SZ, "cub3D");
 	//here is the game process should be
 	mlx_hook(all->win.win, 2, 1, 1L << 0, key_pressed, all);

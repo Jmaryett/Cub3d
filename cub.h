@@ -15,6 +15,7 @@
 # define SPRITE_SZ 64
 
 //struct for a window
+
 typedef struct s_win
 {
 	void	*mlx;
@@ -24,6 +25,7 @@ typedef struct s_win
 }			t_win;
 
 //for a point or aim??
+
 typedef struct s_point
 {
 	int	x;
@@ -31,6 +33,7 @@ typedef struct s_point
 }			t_point;
 
 //for a player and ray
+
 typedef struct s_plr
 {
 	float	x;
@@ -41,6 +44,7 @@ typedef struct s_plr
 }			t_plr;
 
 //struct for xpm to img for each texture
+
 typedef struct s_img
 {
 	void	*img;
@@ -50,7 +54,9 @@ typedef struct s_img
 	int		endian;
 }			t_img;
 
-//each struct will have it's info with xpm, addr, etc.
+//each struct will have it's info with xpm, addr, etc. 
+//struct for wall textures, not for bonuses
+
 typedef struct s_sprites
 {
 	t_img	*img_north;
@@ -59,8 +65,8 @@ typedef struct s_sprites
 	t_img	*img_west;
 }				t_sprites;
 
+//floor and ceiling colors structure, chars needed by jmaryett
 
-//floor and ceiling colors structure, chars needed to jmaryett
 typedef struct s_floor
 {
 	char	*floor_color;
@@ -68,7 +74,6 @@ typedef struct s_floor
 	int		floor_g;
 	int		floor_b;
 }				t_floor;
-
 
 typedef struct s_ceiling
 {
@@ -79,6 +84,7 @@ typedef struct s_ceiling
 }			t_ceiling;
 
 //structure for texture paths
+
 typedef struct s_text_path
 {
 	char	*path_north;
@@ -99,21 +105,24 @@ typedef struct s_all
 }			t_all;
 
 //util func
+
 void	errors(char *s);
 int		ft_strcmp(const char *s1, const char *s2);
 int		check_only_spaces(char *s);
 int		ft_atoi_m(const char *str);
 int		skip_space(char *str, unsigned char sym);
 size_t	ft_strlen_m(const char *str, int c);
-int	skip_whitespace(char *str);
+int		skip_whitespace(char *str);
 
 //parse funcs
+
 void	check_input(char *av, t_all *all);
 void	check_list_content(t_list **head, t_all *all);
 void	init_all(t_all *all);
 void	valid_text(char *s, t_all *all, int i);
 
 //validating input for each element including map
+
 void	create_map(t_list *map_head, int size, t_all *all);
 int		check_if_all_elems_filled(t_all *all);
 
@@ -128,8 +137,10 @@ int		skip_space_in_s(char *s, int i);
 void	check_if_map_is_valid(char **map, t_plr *player);
 void	check_walls(char **map, int i, int j);
 void	check_how_map_filled(char **map, int i, int j);
-void	check_screen(void);
 
 void	init_sprites(t_sprites *sprites, t_all *all);
+
+//end of parse
+
 
 #endif

@@ -71,6 +71,5 @@ void	check_input(char *av, t_all *all)
 		printf("%s\n", (char *)tmp->content);
 	check_list_content(&head, all);
 	//check_xpm();
-	check_screen();
 	//make_map(&head, ft_lstsize(head));
 }

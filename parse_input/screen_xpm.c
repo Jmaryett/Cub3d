@@ -26,13 +26,3 @@ void	init_sprites(t_sprites *sprites, t_all *all)
 	sprites->img_west = malloc(sizeof(t_img));
 	set_img_struct(all, sprites->img_west, all->text.path_west);
 }
-
-void	check_screen(void)
-{
-	int	max_x;
-	int	max_y;
-
-	mlx_get_screen_size(&max_x, &max_y);
-	if (max_x < RES_X || max_y < RES_Y)
-		errors("Error\nIncorrect resolution!\n");
-}
