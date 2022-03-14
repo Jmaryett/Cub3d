@@ -30,7 +30,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 HEADER = cub.h \
 		./libft/libft.h \
-		./gnl/get_next_line.h
+		./gnl/get_next_line.h \
+		/usr/include/X11/
 
 MLX = libmlx.dylib
 
@@ -48,14 +49,12 @@ ${MLX}:
 		cd ./mlx; \
 		make; \
 		mv ${MLX} ../; \
-		make clean; \
 		cd ../
 
 ${MLX_LINUX}:
 				cd ./mlx_linux; \
 				make; \
 				mv ${MLX_LINUX} ../; \
-				make clean; \
 				cd ../
 
 $(LIBA): $(LIBA_C) $(LIBA_H)
@@ -69,7 +68,7 @@ ${NAME}: ${LIBA} ${MLX} ${HEADER} ${OBJ}
 		${CC} ${CFLAGS} -framework  OpenGL -framework AppKit -o ${NAME} ${OBJ} ${LIBA} ${MLX}
 
 $(NAME_LINUX): ${LIBA} ${MLX_LINUX} ${HEADER} ${OBJ}
-			${CC} ${CFLAGS} -Lmlx_linux -L/usr/lib -Imlx_linux -lm -o $(NAME_LINUX) ${OBJ} ${LIBA} ${MLX_LINUX}
+			${CC} ${CFLAGS} -Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME_LINUX) ${OBJ} ${LIBA} ${MLX_LINUX}
 
 liba: $(LIBA)
 
@@ -79,7 +78,7 @@ clean:
 		${RM} ${OBJ}
 
 fclean:	clean
-		${RM} ${NAME} $(NAME_LINUX) a.out ${LIBA} ${MLX}
+		${RM} ${NAME} $(NAME_LINUX) a.out ${LIBA} ${MLX} ${MLX_LINUX}
 
 norm:
 		norminette ${SOURCE} ${HEADER}

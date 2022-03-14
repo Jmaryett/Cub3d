@@ -6,7 +6,10 @@
 #include "gnl/get_next_line.h"
 #include <math.h>
 #include <limits.h>
-#include "mlx/mlx.h"
+//#include "mlx/mlx.h"
+//#include "/usr/include/X11"
+#include "mlx_linux/mlx.h"
+#include "mlx_linux/mlx_int.h"
 
 # define SCALE 16 //conditionally our square size in the map
 # define BUF_SIZE 32
@@ -45,24 +48,24 @@ typedef struct s_plr
 
 //struct for xpm to img for each texture
 
-typedef struct s_img
+typedef struct s_image
 {
 	void	*img;
 	void	*addr;
 	int		b_p_p;
 	int		line_len;
 	int		endian;
-}			t_img;
+}			t_image;
 
 //each struct will have it's info with xpm, addr, etc. 
 //struct for wall textures, not for bonuses
 
 typedef struct s_sprites
 {
-	t_img	*img_north;
-	t_img	*img_south;
-	t_img	*img_east;
-	t_img	*img_west;
+	t_image	*img_north;
+	t_image	*img_south;
+	t_image	*img_east;
+	t_image	*img_west;
 }				t_sprites;
 
 //floor and ceiling colors structure, chars needed by jmaryett
