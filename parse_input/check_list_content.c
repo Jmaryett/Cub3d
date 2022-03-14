@@ -54,6 +54,7 @@ static void	process_elements(char *s, t_all *all)
 
 static int check_str_content(char *content, t_all *all, t_list *tmp)
 {
+	// printf("%s\n", content);
 	if (!check_only_spaces(content)) //if str contains only spaces we skip it
 		return (0);
 	else if (is_map(tmp)) //if we find map then we stop processing in that func, create map and return filled structs and map
@@ -61,6 +62,8 @@ static int check_str_content(char *content, t_all *all, t_list *tmp)
 		if (!check_if_all_elems_filled(all))
 			errors("Error\nNot enough elements!\n");
 		create_map(tmp, ft_lstsize(tmp), all); //we fill map
+		// printf("%s\n", content);
+
 		return (1);
 	}
 	process_elements(content, all);

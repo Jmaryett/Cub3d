@@ -25,15 +25,18 @@ void	create_map(t_list *map_head, int size, t_all *all)
 	i = -1;
 	while (tmp)
 	{
-		map[++i] = tmp->content;
+		map[++i] = ft_strdup(tmp->content);
 		tmp = tmp->next;
 	}
+	// map[i] = NULL;
 	//for (int i = 0; map[i]; i++)
 	//	printf("after checking %s\n", map[i]);
 	check_valid_after_parse(all, map);
 	all->map = map;
 	i = 0;
-	while(map[i])
-		free(map[i]);
-	free(map);
+	// while(map[i]) {
+	// 	free(map[i]);
+	// 	i++;
+	// }
+	// free(map);
 }

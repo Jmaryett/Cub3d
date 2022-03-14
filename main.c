@@ -23,5 +23,8 @@ int	main(int ac, char **av)
 	init_all(&all);
 	check_input(av[1], &all);
 	//start_mlx(&all);
+	for (int i = 0; all.map[i] != NULL ; i++) {
+		printf("%s\n", all.map[i]);
+	}
 	exit(0);
 }
