@@ -32,4 +32,8 @@ void	create_map(t_list *map_head, int size, t_all *all)
 	//	printf("after checking %s\n", map[i]);
 	check_valid_after_parse(all, map);
 	all->map = map;
+	i = 0;
+	while(map[i])
+		free(map[i]);
+	free(map);
 }

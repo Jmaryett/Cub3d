@@ -1,6 +1,6 @@
 #include "../../cub.h"
 
-static void	set_img_struct(t_all *all, t_img *texture, char *path)
+static void	set_img_struct(t_all *all, t_image *texture, char *path)
 {
 	int	sz[2]; //for image size
 
@@ -17,12 +17,12 @@ static void	set_img_struct(t_all *all, t_img *texture, char *path)
 
 void	init_sprites(t_sprites *sprites, t_all *all)
 {
-	sprites->img_north = malloc(sizeof(t_img));
+	sprites->img_north = malloc(sizeof(t_image));
 	set_img_struct(all, sprites->img_north, all->text.path_north);
-	sprites->img_south = malloc(sizeof(t_img));
+	sprites->img_south = malloc(sizeof(t_image));
 	set_img_struct(all, sprites->img_south, all->text.path_south);
-	sprites->img_east = malloc(sizeof(t_img));
+	sprites->img_east = malloc(sizeof(t_image));
 	set_img_struct(all, sprites->img_east, all->text.path_east);
-	sprites->img_west = malloc(sizeof(t_img));
+	sprites->img_west = malloc(sizeof(t_image));
 	set_img_struct(all, sprites->img_west, all->text.path_west);
 }

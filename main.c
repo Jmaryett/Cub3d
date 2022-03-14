@@ -22,6 +22,6 @@ int	main(int ac, char **av)
 		errors("Error\nWrong number of args!\n");
 	init_all(&all);
 	check_input(av[1], &all);
-	start_mlx(&all);
+	//start_mlx(&all);
 	exit(0);
 }

@@ -67,9 +67,14 @@ void	check_input(char *av, t_all *all)
 	while (get_next_line(fd, &line))
 		ft_lstadd_back(&head, ft_lstnew(line));
 	ft_lstadd_back(&head, ft_lstnew(line));
-	for(t_list *tmp = head; tmp; tmp = tmp->next)
-		printf("%s\n", (char *)tmp->content);
+	//for(t_list *tmp = head; tmp; tmp = tmp->next)
+	//	printf("%s\n", (char *)tmp->content);
 	check_list_content(&head, all);
+	while(head)
+	{
+		free(head);
+		head = head->next;
+	}
 	//check_xpm();
 	//make_map(&head, ft_lstsize(head));
 }
