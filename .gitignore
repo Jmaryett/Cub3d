@@ -1,5 +1,8 @@
 *.o
 parse_input/map/*.o
 parse_input/*.o
-.DS-Store
+.DS_Store
 libft.a
+cub3D
+cub3d_destroyer/
+libmlx.dylib
