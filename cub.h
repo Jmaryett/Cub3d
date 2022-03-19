@@ -118,6 +118,7 @@ size_t	ft_strlen_m(const char *str, int c);
 int		skip_whitespace(char *str);
 void	clean_struct_all(t_all *all);
 
+
 //parse funcs
 
 void	check_input(char *av, t_all *all);
@@ -141,6 +142,8 @@ int		skip_space_in_s(char *s, int i);
 void	check_if_map_is_valid(char **map, t_plr *player);
 void	check_walls(char **map, int i, int j);
 void	check_how_map_filled(char **map, int i, int j);
+
+void	fix_text_path(t_text_path *text);
 
 void	init_sprites(t_sprites *sprites, t_all *all);
 

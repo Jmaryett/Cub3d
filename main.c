@@ -26,6 +26,7 @@ int	main(int ac, char **av)
 	for (int i = 0; all.map[i] != NULL ; i++) {
 		printf("%s\n", all.map[i]);
 	}
+	fix_text_path(&all.text);
 	printf("%s\n", all.text.path_east);
 	printf("%s\n", all.text.path_south);
 	printf("%s\n", all.text.path_west);
