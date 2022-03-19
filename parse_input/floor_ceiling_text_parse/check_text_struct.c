@@ -106,4 +106,5 @@ void	check_text_struct(t_all *all)
 	check_east_struct(all->text.path_east);
 	check_west_struct(all->text.path_west);
 	check_south_struct(all->text.path_south);
+	//printf("%s\n", all->text.path_east);
 }

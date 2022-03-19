@@ -26,5 +26,11 @@ int	main(int ac, char **av)
 	for (int i = 0; all.map[i] != NULL ; i++) {
 		printf("%s\n", all.map[i]);
 	}
-	exit(0);
+	printf("%s\n", all.text.path_east);
+	printf("%s\n", all.text.path_south);
+	printf("%s\n", all.text.path_west);
+	printf("%s\n", all.text.path_north);
+	clean_struct_all(&all);
+	//exit(0);
+	return(0);
 }

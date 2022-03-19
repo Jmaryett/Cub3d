@@ -63,7 +63,6 @@ static int check_str_content(char *content, t_all *all, t_list *tmp)
 			errors("Error\nNot enough elements!\n");
 		create_map(tmp, ft_lstsize(tmp), all); //we fill map
 		// printf("%s\n", content);
-
 		return (1);
 	}
 	process_elements(content, all);
@@ -86,4 +85,5 @@ void	check_list_content(t_list **head, t_all *all)
 	}
 	if (map_flag == 0)
 		errors("Error\nNo map in the file\n");
+	//printf("%s\n", all->text.path_east);
 }

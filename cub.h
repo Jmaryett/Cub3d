@@ -116,6 +116,7 @@ int		ft_atoi_m(const char *str);
 int		skip_space(char *str, unsigned char sym);
 size_t	ft_strlen_m(const char *str, int c);
 int		skip_whitespace(char *str);
+void	clean_struct_all(t_all *all);
 
 //parse funcs
 

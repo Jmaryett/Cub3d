@@ -20,7 +20,7 @@ SOURCE = main.c errors.c check_input.c \
 		./parse_input/floor_ceiling_text_parse/check_ceiling_format.c \
 		./parse_input/floor_ceiling_text_parse/check_floor_format.c \
 		./parse_input/validate_map/check_if_map_is_valid.c ./parse_input/validate_map/check_walls.c \
-		./parse_input/validate_map/check_how_map_filled.c 
+		./parse_input/validate_map/check_how_map_filled.c ./parse_input/clean_struct_all.c
 
 OBJ = $(SOURCE:.c=.o)
 

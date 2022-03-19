@@ -24,25 +24,25 @@ void	valid_text(char *s, t_all *all, int i)
 	{
 		if (all->text.path_north)
 			errors("Error\nToo many north textures paths!\n");
-		all->text.path_north = s;
+		all->text.path_north = ft_strdup(s);
 	}
 	else if (s[i] == 'W' && s[i + 1] == 'E')
 	{
 		if (all->text.path_west)
 			errors("Error\nToo many west textures paths!\n");
-		all->text.path_west = s;
+		all->text.path_west = ft_strdup(s);
 	}
 	else if (s[i] == 'S' && s[i + 1] == 'O')
 	{
 		if (all->text.path_south)
 			errors("Error\nToo many south textures paths!\n");
-		all->text.path_south = s;
+		all->text.path_south = ft_strdup(s);
 	}
 	else if (s[i] == 'E' && s[i + 1] == 'A')
 	{
 		if (all->text.path_east)
 			errors("Error\nToo many east textures paths!\n");
-		all->text.path_east = s;
+		all->text.path_east = ft_strdup(s);
 	}
 	else
 		valid_color(s, all, i);
