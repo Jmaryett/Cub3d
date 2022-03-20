@@ -1,0 +1,39 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/jmaryett/Desktop/Cub3d'
+cd ./libft; \
+			make bonus; \
+			mv libft.a ../; \
+			make clean; \
+			cd ../
+ 
+cd ./mlx; \
+		make; \
+		mv libmlx.dylib ../; \
+		make clean; \
+		cd ../
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c main.c -o main.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c errors.c -o errors.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c check_input.c -o check_input.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c gnl/get_next_line.c -o gnl/get_next_line.o
+ 
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c gnl/get_next_line_utils.c -o gnl/get_next_line_utils.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/check_list_content.c -o parse_input/check_list_content.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/init_all.c -o parse_input/init_all.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/utils.c -o parse_input/utils.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/valid_text_elem.c -o parse_input/valid_text_elem.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/check_if_all_elems_filled.c -o parse_input/check_if_all_elems_filled.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/create_map.c -o parse_input/create_map.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/floor_ceiling_text_parse/check_text_struct.c -o parse_input/floor_ceiling_text_parse/check_text_struct.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/floor_ceiling_text_parse/check_ceiling_struct.c -o parse_input/floor_ceiling_text_parse/check_ceiling_struct.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/floor_ceiling_text_parse/check_floor_struct.c -o parse_input/floor_ceiling_text_parse/check_floor_struct.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/floor_ceiling_text_parse/utils_for_color.c -o parse_input/floor_ceiling_text_parse/utils_for_color.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/floor_ceiling_text_parse/check_ceiling_format.c -o parse_input/floor_ceiling_text_parse/check_ceiling_format.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/floor_ceiling_text_parse/check_floor_format.c -o parse_input/floor_ceiling_text_parse/check_floor_format.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/validate_map/check_if_map_is_valid.c -o parse_input/validate_map/check_if_map_is_valid.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/validate_map/check_walls.c -o parse_input/validate_map/check_walls.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/validate_map/check_how_map_filled.c -o parse_input/validate_map/check_how_map_filled.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/clean_struct_all.c -o parse_input/clean_struct_all.o
+gcc -g -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c parse_input/fix_text_path.c -o parse_input/fix_text_path.o
+gcc -g -Wall -Wextra -Werror -framework  OpenGL -framework AppKit -o cub3d main.o errors.o check_input.o ./gnl/get_next_line.o ./gnl/get_next_line_utils.o ./parse_input/check_list_content.o ./parse_input/init_all.o ./parse_input/utils.o ./parse_input/valid_text_elem.o ./parse_input/check_if_all_elems_filled.o ./parse_input/create_map.o ./parse_input/floor_ceiling_text_parse/check_text_struct.o ./parse_input/floor_ceiling_text_parse/check_ceiling_struct.o ./parse_input/floor_ceiling_text_parse/check_floor_struct.o ./parse_input/floor_ceiling_text_parse/utils_for_color.o ./parse_input/floor_ceiling_text_parse/check_ceiling_format.o ./parse_input/floor_ceiling_text_parse/check_floor_format.o ./parse_input/validate_map/check_if_map_is_valid.o ./parse_input/validate_map/check_walls.o ./parse_input/validate_map/check_how_map_filled.o ./parse_input/clean_struct_all.o ./parse_input/fix_text_path.o libft.a libmlx.dylib
+make: Leaving directory `/Users/jmaryett/Desktop/Cub3d'
+ 

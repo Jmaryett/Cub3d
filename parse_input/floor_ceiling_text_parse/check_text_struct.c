@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_text_struct.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 15:41:46 by jmaryett          #+#    #+#             */
+/*   Updated: 2022/03/20 15:41:46 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../cub.h"
 
 static void	check_west_struct(char *path_west)
@@ -106,5 +118,4 @@ void	check_text_struct(t_all *all)
 	check_east_struct(all->text.path_east);
 	check_west_struct(all->text.path_west);
 	check_south_struct(all->text.path_south);
-	//printf("%s\n", all->text.path_east);
 }

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_floor_format.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 15:50:50 by jmaryett          #+#    #+#             */
+/*   Updated: 2022/03/20 15:50:50 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../cub.h"
 
-static int fill_rgb(char *str, int flag, t_floor *floor, int i)
+static int	fill_rgb(char *str, int flag, t_floor *floor, int i)
 {
 	if (floor->floor_r == -1)
 	{
@@ -20,10 +32,10 @@ static int fill_rgb(char *str, int flag, t_floor *floor, int i)
 	return (flag);
 }
 
-void check_floor_format(char *str, t_floor *floor)
+void	check_floor_format(char *str, t_floor *floor)
 {
-	int i;
-	int flag;
+	int	i;
+	int	flag;
 
 	i = 0;
 	flag = 0;
@@ -38,10 +50,10 @@ void check_floor_format(char *str, t_floor *floor)
 		if (str[i] == ',' && flag != 3 && str[i + 1] != '\0')
 		{
 			i++;
-			continue;
+			continue ;
 		}
 		else if (flag == 3 && str[i] == '\0')
-			break;
+			break ;
 		else
 			errors("Error\nWrong color format check_floor_format\n");
 	}

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 15:31:38 by jmaryett          #+#    #+#             */
+/*   Updated: 2022/03/20 15:31:38 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 static int	check_line(char *ostatok, char **line, char *buf)
@@ -67,10 +79,8 @@ int	get_next_line(int fd, char **line)
 {
 	char		*buf;
 	static char	*ostatok;
-	//int			i;
 	size_t		n_read;
 
-	//i = 0;
 	if (fd < 0 || !line || BUFFER_SIZE < 1)
 		return (-1);
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_input.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 15:30:07 by jmaryett          #+#    #+#             */
+/*   Updated: 2022/03/20 15:30:08 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub.h"
 
 void	check_file_name(char *filename)
@@ -36,12 +48,21 @@ int	check_folder_valid_file(char *av)
 	return (fd);
 }
 
+//t_list *tmp;
+// while(head)
+// {
+// 	tmp = head->next;
+// 	if (head->content)
+// 		free(head->content);
+// 	free(head);
+// 	head = tmp;
+// }
+//check_xpm(); in the end
 void	check_input(char *av, t_all *all)
 {
 	int		fd;
 	char	*line;
 	t_list	*head;
-	//t_list *tmp;
 
 	line = NULL;
 	head = NULL;
@@ -51,15 +72,5 @@ void	check_input(char *av, t_all *all)
 		ft_lstadd_back(&head, ft_lstnew((void *)line));
 	ft_lstadd_back(&head, ft_lstnew((void *)line));
 	check_list_content(&head, all);
-	// while(head)
-	// {
-	// 	tmp = head->next;
-	// 	if (head->content)
-	// 		free(head->content);
-	// 	free(head);
-	// 	head = tmp;
-	// }
-	// // while (1);
 	ft_lstclear(&head, free);
-	//check_xpm();
 }

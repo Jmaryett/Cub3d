@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_ceiling_struct.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 15:42:19 by jmaryett          #+#    #+#             */
+/*   Updated: 2022/03/20 15:44:02 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../cub.h"
 
+//30 - i cut the identifier first and left only what is after
 static char	*cut_ceiling_identifier(char *str, int i)
 {
 	char	*tmp;
@@ -12,15 +25,15 @@ static char	*cut_ceiling_identifier(char *str, int i)
 	if (!ft_isdigit(str[i]))
 		errors("Error\nAfter C should be a positive digit!\n");
 	len = i;
-	while(str[len])
+	while (str[len])
 		len++;
-	tmp = ft_substr(str, i, len); //i cut the identifier first and left only what is after
-	return(tmp);
+	tmp = ft_substr(str, i, len);
+	return (tmp);
 }
 
 void	check_ceiling_struct(char *colors, t_all *all)
 {
-	int	i;
+	int		i;
 	char	*tmp;
 
 	i = skip_space(colors, ' ');

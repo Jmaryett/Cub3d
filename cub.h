@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 16:12:52 by jmaryett          #+#    #+#             */
+/*   Updated: 2022/03/20 16:18:48 by jmaryett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CUB_H
 
 # define CUB_H
 
-#include "libft/libft.h"
-#include "gnl/get_next_line.h"
-#include <math.h>
-#include <limits.h>
-//#include "mlx/mlx.h"
+# include "libft/libft.h"
+# include "gnl/get_next_line.h"
+# include <math.h>
+# include <limits.h>
+# include "mlx/mlx.h"
 //#include "/usr/include/X11"
-#include "mlx_linux/mlx.h"
-#include "mlx_linux/mlx_int.h"
+//# include "mlx_linux/mlx.h"
+//# include "mlx_linux/mlx_int.h"
 
 # define SCALE 16 //conditionally our square size in the map
 # define BUF_SIZE 32
@@ -96,6 +108,8 @@ typedef struct s_text_path
 	char	*path_west;
 }			t_text_path;
 
+//t_sprites - for working with pixels and mlx
+
 typedef struct s_all
 {
 	t_win		win;
@@ -103,7 +117,7 @@ typedef struct s_all
 	t_text_path	text;
 	t_floor		floor;
 	t_ceiling	ceiling;
-	t_sprites	sprites; //for working with pixels and mlx
+	t_sprites	sprites;
 	char		**map;
 }			t_all;
 
@@ -117,7 +131,6 @@ int		skip_space(char *str, unsigned char sym);
 size_t	ft_strlen_m(const char *str, int c);
 int		skip_whitespace(char *str);
 void	clean_struct_all(t_all *all);
-
 
 //parse funcs
 
@@ -148,6 +161,5 @@ void	fix_text_path(t_text_path *text);
 void	init_sprites(t_sprites *sprites, t_all *all);
 
 //end of parse
-
 
 #endif
